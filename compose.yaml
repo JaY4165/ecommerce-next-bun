@@ -1,0 +1,16 @@
+services:
+  ecommercenextbun:
+    image: ecommercenextbun
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+  sonarqube:
+    image: sonarqube:latest
+    ports:
+      - 9000:9000
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
